@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistente Virtual Shopyfi - Tu Guía de Salud Natural</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>Shopyfi Naturópata</span>
+            </div>
+            <div class="header-actions">
+                <a href="https://calendly.com/juanpedrohomeopata/citas-naturopata" target="_blank" class="btn-primary">
+                    <i class="fas fa-calendar-check"></i> Agendar Cita
+                </a>
+                <button class="btn-settings" id="settingsBtn">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Chat Interface -->
+    <main class="chat-container">
+        <div class="chat-wrapper">
+            <!-- Welcome Banner -->
+            <div class="welcome-banner" id="welcomeBanner">
+                <div class="welcome-content">
+                    <div class="welcome-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h1>¡Bienvenido a Shopyfi!</h1>
+                    <p>Soy tu asistente virtual especializado en salud natural y terapias holísticas. Estoy aquí para ayudarte a encontrar los mejores productos naturales y orientarte sobre nuestros servicios de naturopatía, acupuntura, hipertermia y Quantum SCIO.</p>
+                    <div class="quick-options">
+                        <button class="quick-btn" onclick="sendQuickMessage('¿Qué productos naturales tienen?')">
+                            <i class="fas fa-seedling"></i> Productos Naturales
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('¿Qué servicios ofrecen?')">
+                            <i class="fas fa-hand-holding-medical"></i> Servicios Terapéuticos
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('¿Qué es el Quantum SCIO?')">
+                            <i class="fas fa-atom"></i> Quantum SCIO
+                        </button>
+                        <button class="quick-btn" onclick="sendQuickMessage('Test de intolerancia alimentaria')">
+                            <i class="fas fa-vial"></i> Test de Intolerancia
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chatMessages">
+                <!-- Messages will be added here dynamically -->
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                <div class="typing-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <span class="typing-text">Escribiendo...</span>
+            </div>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <textarea 
+                    id="chatInput" 
+                    placeholder="Escribe tu pregunta sobre salud natural, productos o servicios..."
+                    rows="1"
+                ></textarea>
+                <button id="sendBtn" class="btn-send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="input-footer">
+                <span class="powered-by">
+                    <i class="fas fa-heart"></i> Asistente IA especializado en Naturopatía
+                </span>
+            </div>
+        </div>
+    </main>
+
+    <!-- Settings Panel -->
+    <div class="settings-panel" id="settingsPanel">
+        <div class="settings-content">
+            <div class="settings-header">
+                <h2><i class="fas fa-sliders-h"></i> Configuración del Asistente</h2>
+                <button class="btn-close" id="closeSettings">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <div class="settings-body">
+                <!-- Personality Settings -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-smile"></i> Personalidad del Asistente</h3>
+                    
+                    <div class="setting-item">
+                        <label for="empathyLevel">Nivel de Empatía</label>
+                        <div class="slider-container">
+                            <input type="range" id="empathyLevel" min="1" max="10" value="9" class="slider">
+                            <span class="slider-value" id="empathyValue">9</span>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="friendlinessLevel">Amabilidad</label>
+                        <div class="slider-container">
+                            <input type="range" id="friendlinessLevel" min="1" max="10" value="9" class="slider">
+                            <span class="slider-value" id="friendlinessValue">9</span>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="formalityLevel">Formalidad</label>
+                        <div class="slider-container">
+                            <input type="range" id="formalityLevel" min="1" max="10" value="5" class="slider">
+                            <span class="slider-value" id="formalityValue">5</span>
+                        </div>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="detailLevel">Nivel de Detalle</label>
+                        <div class="slider-container">
+                            <input type="range" id="detailLevel" min="1" max="10" value="7" class="slider">
+                            <span class="slider-value" id="detailValue">7</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Behavior Settings -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-cogs"></i> Comportamiento</h3>
+                    
+                    <div class="setting-item checkbox-item">
+                        <label>
+                            <input type="checkbox" id="showPrices" checked>
+                            <span>Mostrar precios de productos</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item checkbox-item">
+                        <label>
+                            <input type="checkbox" id="suggestAppointments" checked>
+                            <span>Sugerir citas automáticamente</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item checkbox-item">
+                        <label>
+                            <input type="checkbox" id="proactiveMode" checked>
+                            <span>Modo proactivo (ofrecer información adicional)</span>
+                        </label>
+                    </div>
+
+                    <div class="setting-item checkbox-item">
+                        <label>
+                            <input type="checkbox" id="useEmojis" checked>
+                            <span>Usar emojis en las respuestas</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Response Settings -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-comments"></i> Configuración de Respuestas</h3>
+                    
+                    <div class="setting-item">
+                        <label for="responseSpeed">Velocidad de respuesta</label>
+                        <select id="responseSpeed" class="select-input">
+                            <option value="fast">Rápida (0.5s)</option>
+                            <option value="normal" selected>Normal (1s)</option>
+                            <option value="slow">Pausada (2s)</option>
+                        </select>
+                    </div>
+
+                    <div class="setting-item">
+                        <label for="greetingMessage">Mensaje de bienvenida personalizado</label>
+                        <textarea id="greetingMessage" class="text-input" rows="3">¡Hola! 😊 Soy tu asistente virtual de Shopyfi. Estoy aquí para ayudarte a encontrar los mejores productos naturales para tu salud y bienestar. ¿En qué puedo ayudarte hoy?</textarea>
+                    </div>
+                </div>
+
+                <!-- Knowledge Base -->
+                <div class="settings-section">
+                    <h3><i class="fas fa-brain"></i> Base de Conocimientos</h3>
+                    
+                    <div class="setting-item">
+                        <button class="btn-secondary" id="resetKnowledge">
+                            <i class="fas fa-sync-alt"></i> Restablecer conocimientos
+                        </button>
+                    </div>
+
+                    <div class="setting-item">
+                        <button class="btn-secondary" id="clearHistory">
+                            <i class="fas fa-trash"></i> Limpiar historial de chat
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="settings-footer">
+                <button class="btn-primary" id="saveSettings">
+                    <i class="fas fa-save"></i> Guardar Cambios
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Scripts -->
+    <script src="js/ai-engine.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
