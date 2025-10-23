@@ -325,10 +325,6 @@ productosUrls: {
     
     return response;
 }
-        
-        return response;
-    }
-
     /**
      * Generate Quantum SCIO response
      */
