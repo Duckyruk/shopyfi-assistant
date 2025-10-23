@@ -284,21 +284,22 @@ productosUrls: {
     /**
      * Generate services overview response
      */
-    generateServicesResponse() {
-        const emoji = this.settings.useEmojis;
-        let response = `${emoji ? '🌟 ' : ''}¡Excelente pregunta! En Shopyfi ofrecemos servicios terapéuticos integrales:\n\n`;
-        
-        response += `${emoji ? '🍃 ' : ''}**Naturopatía**: Terapia holística que utiliza métodos naturales para promover tu salud integral.\n\n`;
-        response += `${emoji ? '⚛️ ' : ''}**Quantum SCIO**: Sistema cuántico avanzado que analiza más de 11,000 frecuencias del cuerpo para detectar y equilibrar energéticamente.\n\n`;
-        response += `${emoji ? '💉 ' : ''}**Acupuntura**: Antigua terapia china para aliviar dolor, reducir estrés y restaurar el balance energético.\n\n`;
-        response += `${emoji ? '🔥 ' : ''}**Hipertermia**: Terapia con calor controlado para desintoxicar y fortalecer el sistema inmunológico.\n\n`;
-        response += `${emoji ? '🧪 ' : ''}**Test de Intolerancia Alimentaria**: Análisis completo para identificar alimentos que afectan tu bienestar.\n\n`;
-        
-        if (this.settings.suggestAppointments) {
-            response += `${emoji ? '📅 ' : ''}¿Te gustaría agendar una cita para conocer mejor cómo podemos ayudarte?`;
-        }
-        
-        return response;
+   generateProductsResponse(message) {
+    const emoji = this.settings.useEmojis;
+    let response = `${emoji ? '🌿 ' : ''}En Sabiamedicina.com tenemos productos naturales de alta calidad:\n\n`;
+    
+    response += `${emoji ? '💊 ' : ''}**Digestivos y Probióticos**: ERGYPHILUS Confort, ERGYPHILUS Plus, PROBILAC Plus, GASTRICOL\n`;
+    response += `${emoji ? '😌 ' : ''}**Relajación y Estrés**: Ergycalm, ERGYMAG (magnesio), SERENBEL, SYNER POSITIVE\n`;
+    response += `${emoji ? '✨ ' : ''}**Depurativos**: DEPUR+, ERGYEPUR, Depurativo Antártico\n`;
+    response += `${emoji ? '🦴 ' : ''}**Articulaciones**: ERGYSIL, EPADOL Colágeno Marino\n`;
+    response += `${emoji ? '⚡ ' : ''}**Energía**: ERGYACTIV, ERGYFOSFORYL, ERGYFERIL, BICEBE PLUS\n`;
+    response += `${emoji ? '🛡️ ' : ''}**Inmunidad**: SYSTEM-IM\n\n`;
+    
+    response += `Todos nuestros productos son naturales y de marcas reconocidas como Nutergia y Gianluca Mech.\n\n`;
+    response += `¿Hay alguna necesidad específica de salud que quieras mejorar? Puedo recomendarte los productos más adecuados para ti.`;
+    
+    return response;
+}
     }
 
     /**
