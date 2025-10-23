@@ -300,8 +300,6 @@ productosUrls: {
     
     return response;
 }
-    }
-
     /**
      * Generate products response
      */
