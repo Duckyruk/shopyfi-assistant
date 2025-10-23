@@ -282,25 +282,6 @@ productosUrls: {
     }
 
     /**
-     * Generate services overview response
-     */
-   generateProductsResponse(message) {
-    const emoji = this.settings.useEmojis;
-    let response = `${emoji ? '🌿 ' : ''}En Sabiamedicina.com tenemos productos naturales de alta calidad:\n\n`;
-    
-    response += `${emoji ? '💊 ' : ''}**Digestivos y Probióticos**: ERGYPHILUS Confort, ERGYPHILUS Plus, PROBILAC Plus, GASTRICOL\n`;
-    response += `${emoji ? '😌 ' : ''}**Relajación y Estrés**: Ergycalm, ERGYMAG (magnesio), SERENBEL, SYNER POSITIVE\n`;
-    response += `${emoji ? '✨ ' : ''}**Depurativos**: DEPUR+, ERGYEPUR, Depurativo Antártico\n`;
-    response += `${emoji ? '🦴 ' : ''}**Articulaciones**: ERGYSIL, EPADOL Colágeno Marino\n`;
-    response += `${emoji ? '⚡ ' : ''}**Energía**: ERGYACTIV, ERGYFOSFORYL, ERGYFERIL, BICEBE PLUS\n`;
-    response += `${emoji ? '🛡️ ' : ''}**Inmunidad**: SYSTEM-IM\n\n`;
-    
-    response += `Todos nuestros productos son naturales y de marcas reconocidas como Nutergia y Gianluca Mech.\n\n`;
-    response += `¿Hay alguna necesidad específica de salud que quieras mejorar? Puedo recomendarte los productos más adecuados para ti.`;
-    
-    return response;
-}
-    /**
      * Generate products response
      */
     generateProductsResponse(message) {
