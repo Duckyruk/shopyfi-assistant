@@ -306,17 +306,25 @@ productosUrls: {
      * Generate products response
      */
     generateProductsResponse(message) {
-        const emoji = this.settings.useEmojis;
-        let response = `${emoji ? '🌿 ' : ''}Contamos con una amplia gama de productos naturales de alta calidad:\n\n`;
-        
-        response += `${emoji ? '💊 ' : ''}**Suplementos**: Vitaminas, minerales y extractos de plantas medicinales\n`;
-        response += `${emoji ? '🌾 ' : ''}**Digestivos**: Probióticos, enzimas y hierbas para la salud intestinal\n`;
-        response += `${emoji ? '🛡️ ' : ''}**Inmunidad**: Própolis, equinácea y antioxidantes naturales\n`;
-        response += `${emoji ? '😌 ' : ''}**Estrés y Relajación**: Adaptógenos y plantas calmantes\n`;
-        response += `${emoji ? '✨ ' : ''}**Desintoxicación**: Depurativos hepáticos y antioxidantes\n\n`;
-        
-        response += `Todos nuestros productos son naturales, sin aditivos químicos y de origen sostenible.\n\n`;
-        response += `¿Hay alguna condición de salud específica que quieras mejorar? Puedo recomendarte los productos más adecuados para ti.`;
+    const emoji = this.settings.useEmojis;
+    let response = `${emoji ? '🌿 ' : ''}En Sabiamedicina.com tenemos productos naturales de alta calidad:\n\n`;
+    
+    response += `${emoji ? '💊 ' : ''}**Digestivos y Probióticos**: ERGYPHILUS Confort, ERGYPHILUS Plus, PROBILAC Plus, GASTRICOL\n`;
+    response += `${emoji ? '😌 ' : ''}**Relajación y Estrés**: Ergycalm, ERGYMAG (magnesio), SERENBEL, SYNER POSITIVE\n`;
+    response += `${emoji ? '✨ ' : ''}**Depurativos**: DEPUR+, ERGYEPUR, Depurativo Antártico\n`;
+    response += `${emoji ? '🦴 ' : ''}**Articulaciones**: ERGYSIL, EPADOL Colágeno Marino\n`;
+    response += `${emoji ? '⚡ ' : ''}**Energía**: ERGYACTIV, ERGYFOSFORYL, ERGYFERIL, BICEBE PLUS\n`;
+    response += `${emoji ? '🛡️ ' : ''}**Inmunidad**: SYSTEM-IM\n\n`;
+    
+    response += `Todos nuestros productos son naturales y de marcas reconocidas como Nutergia y Gianluca Mech.\n\n`;
+    response += `¿Hay alguna necesidad específica de salud que quieras mejorar? Puedo recomendarte los productos más adecuados.`;
+    
+    if (this.settings.suggestAppointments) {
+        response += `\n\n${emoji ? '📅 ' : ''}También puedes agendar una consulta personalizada para un plan a tu medida.`;
+    }
+    
+    return response;
+}
         
         return response;
     }
