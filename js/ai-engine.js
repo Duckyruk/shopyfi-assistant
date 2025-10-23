@@ -500,3 +500,4 @@ class ShopyfiAI {
 
 // Export for use in main.js
 window.ShopyfiAI = ShopyfiAI;
+// Force update viernes, 24 de octubre de 2025, 01:20:38 CEST
