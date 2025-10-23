@@ -76,76 +76,83 @@ class ShopyfiAI {
                     indicaciones: ['Problemas digestivos recurrentes', 'Fatiga crónica', 'Problemas de piel', 'Hinchazón abdominal', 'Dolores de cabeza frecuentes']
                 }
             },
-            
-            productos: {
-                suplementos: {
-                    vitaminas: ['Vitamina C natural', 'Complejo B', 'Vitamina D3', 'Omega 3', 'Multivitamínicos naturales'],
-                    minerales: ['Magnesio', 'Zinc', 'Calcio natural', 'Hierro vegetal', 'Selenio'],
-                    plantas: ['Equinácea', 'Ginseng', 'Cúrcuma', 'Jengibre', 'Valeriana', 'Pasiflora']
-                },
-                digestivos: {
-                    probioticos: ['Probióticos avanzados', 'Flora intestinal', 'Enzimas digestivas'],
-                    fibra: ['Psyllium', 'Fibra de acacia', 'Semillas de chía'],
-                    hierbas: ['Manzanilla', 'Hinojo', 'Menta piperita', 'Regaliz']
-                },
-                inmunidad: {
-                    defensas: ['Própolis', 'Jalea real', 'Equinácea', 'Astrágalo'],
-                    antioxidantes: ['Resveratrol', 'Coenzima Q10', 'Té verde', 'Açaí']
-                },
-                estres: {
-                    adaptogenos: ['Ashwagandha', 'Rhodiola', 'Ginseng siberiano'],
-                    relajantes: ['Valeriana', 'Pasiflora', 'Melisa', 'Magnesio']
-                },
-                desintoxicacion: {
-                    depurativos: ['Cardo mariano', 'Diente de león', 'Alcachofa', 'Chlorella'],
-                    antioxidantes: ['Glutatión', 'NAC', 'Ácido alfa-lipoico']
-                }
-            },
+productos: {
+    digestivos: [
+        'ERGYPHILUS Confort - Probiótico para confort digestivo',
+        'ERGYPHILUS INTIMA - Probiótico íntimo',
+        'ERGYPHILUS PLUS - Probiótico avanzado',
+        'PROBILAC PLUS - Probióticos 90 cápsulas',
+        'GIANLUCA MECH GASTRICOL - Para salud gástrica',
+        'ALOESAN - Aloe vera digestivo',
+        'KUZUKOE STICKS - Digestivo natural',
+        'KUZULOE - Bienestar digestivo'
+    ],
+    
+    relajacion_estres: [
+        'Ergycalm - Relajante físico y mental',
+        'ERGYMAG - Magnesio para fatiga física y nerviosa',
+        'SERENBEL - Cápsulas para la serenidad',
+        'SYNER POSITIVE - Bienestar emocional',
+        'HIPERIJAL - Hipérico natural'
+    ],
+    
+    depurativos: [
+        'DEPUR+ TRICONATURA - Depurativo natural',
+        'ERGYEPUR NUTERGIA - Depuración hepática',
+        'Gianluca Depurativo Antártico - Depuración profunda'
+    ],
+    
+    articulaciones: [
+        'ERGYSIL - Solución para articulaciones',
+        'EPADOL COLAGENO MARINO - Colágeno para articulaciones y piel'
+    ],
+    
+    energia_vitalidad: [
+        'ERGYACTIV - Activador energético',
+        'ERGYFOSFORYL - Fósforo y energía mental',
+        'ERGYFERIL - Hierro y vitalidad',
+        'BICEBE PLUS - Vitaminas del grupo B'
+    ],
+    
+    inmunidad: [
+        'SYSTEM-IM - Refuerzo inmunitario en sobres'
+    ],
+    
+    otros: [
+        'ETERNOX OMEGA 7 - Aceite de espino amarillo',
+        'Saw Palmetto Vermont - Salud prostática'
+    ]
+},
 
-            condiciones: {
-                'estrés': {
-                    productos: ['Ashwagandha', 'Rhodiola', 'Magnesio', 'Complejo B', 'Valeriana'],
-                    servicios: ['acupuntura', 'naturopatia', 'quantumScio'],
-                    consejo: 'El estrés crónico puede afectar tu salud de múltiples formas. Te recomiendo combinar suplementos adaptógenos con terapias como la acupuntura para resultados óptimos.'
-                },
-                'digestión': {
-                    productos: ['Probióticos', 'Enzimas digestivas', 'Manzanilla', 'Jengibre', 'Hinojo'],
-                    servicios: ['naturopatia', 'testIntolerancia'],
-                    consejo: 'Los problemas digestivos pueden estar relacionados con intolerancias alimentarias. Un test de intolerancia puede revelarnos información valiosa.'
-                },
-                'inmunidad': {
-                    productos: ['Vitamina C', 'Zinc', 'Própolis', 'Equinácea', 'Vitamina D3'],
-                    servicios: ['naturopatia', 'quantumScio'],
-                    consejo: 'Fortalecer tu sistema inmunológico es fundamental. La combinación de suplementos naturales con terapia Quantum SCIO puede optimizar tus defensas.'
-                },
-                'dolor': {
-                    productos: ['Cúrcuma', 'Omega 3', 'MSM', 'Boswellia'],
-                    servicios: ['acupuntura', 'hipertermia', 'naturopatia'],
-                    consejo: 'El dolor crónico responde muy bien a la acupuntura. Muchos pacientes experimentan alivio significativo sin necesidad de medicamentos.'
-                },
-                'fatiga': {
-                    productos: ['Ginseng', 'Coenzima Q10', 'Complejo B', 'Hierro vegetal', 'Magnesio'],
-                    servicios: ['naturopatia', 'quantumScio', 'testIntolerancia'],
-                    consejo: 'La fatiga puede tener múltiples causas. Un análisis con Quantum SCIO puede ayudarnos a identificar desequilibrios energéticos específicos.'
-                },
-                'ansiedad': {
-                    productos: ['Pasiflora', 'Magnesio', 'Ashwagandha', 'L-teanina', 'Omega 3'],
-                    servicios: ['acupuntura', 'naturopatia', 'quantumScio'],
-                    consejo: 'La ansiedad responde muy bien a tratamientos naturales. La acupuntura combinada con suplementos puede brindarte alivio sin efectos secundarios.'
-                },
-                'insomnio': {
-                    productos: ['Melatonina', 'Valeriana', 'Magnesio', 'L-triptófano', 'Pasiflora'],
-                    servicios: ['acupuntura', 'naturopatia'],
-                    consejo: 'Un buen descanso es fundamental para tu salud. La acupuntura tiene excelentes resultados en problemas de sueño.'
-                },
-                'desintoxicación': {
-                    productos: ['Cardo mariano', 'Chlorella', 'Diente de león', 'Glutatión', 'Alcachofa'],
-                    servicios: ['hipertermia', 'naturopatia'],
-                    consejo: 'La desintoxicación es esencial para mantener la salud. La hipertermia es especialmente efectiva para eliminar toxinas del organismo.'
-                }
-            }
-        };
+// URLs de productos de Sabiamedicina.com
+productosUrls: {
+    'ERGYPHILUS Confort': 'https://sabiamedicina.com/products/ergyphilus-confort-60-capsulas',
+    'ERGYPHILUS INTIMA': 'https://sabiamedicina.com/products/ergyphilus-intima',
+    'ERGYPHILUS PLUS': 'https://sabiamedicina.com/products/ergyphilus-plus',
+    'PROBILAC PLUS': 'https://sabiamedicina.com/products/probilac-plus-90-capsulas',
+    'GASTRICOL': 'https://sabiamedicina.com/products/gianluca-mech-gastricol-500ml',
+    'ALOESAN': 'https://sabiamedicina.com/products/aloesan',
+    'KUZUKOE': 'https://sabiamedicina.com/products/kuzukoe-sticks-30',
+    'KUZULOE': 'https://sabiamedicina.com/products/kuzuloe-500ml',
+    'Ergycalm': 'https://sabiamedicina.com/products/ergycalm-relajante-fisico-y-mental-250-ml',
+    'ERGYMAG': 'https://sabiamedicina.com/products/ergymag-fatiga-fisica-y-nerviosa-aporte-de-magnesio',
+    'SERENBEL': 'https://sabiamedicina.com/products/serenbel',
+    'SYNER POSITIVE': 'https://sabiamedicina.com/products/syner-positive',
+    'HIPERIJAL': 'https://sabiamedicina.com/products/hiperijal',
+    'DEPUR+': 'https://sabiamedicina.com/products/depur-500ml-triconatura',
+    'ERGYEPUR': 'https://sabiamedicina.com/products/ergyepur-nutergia-250-ml',
+    'Depurativo Antártico': 'https://sabiamedicina.com/products/gianluca-depurativo-antartico-500ml',
+    'ERGYSIL': 'https://sabiamedicina.com/products/ergysil-solicion-articulaciones-500-ml',
+    'EPADOL': 'https://sabiamedicina.com/products/epadol-colageno-marino-300g',
+    'ERGYACTIV': 'https://sabiamedicina.com/products/ergyactiv',
+    'ERGYFOSFORYL': 'https://sabiamedicina.com/products/ergyfosforyl-60-capsuas',
+    'ERGYFERIL': 'https://sabiamedicina.com/products/ergyferil-60caps',
+    'BICEBE PLUS': 'https://sabiamedicina.com/products/bicebe-plus',
+    'SYSTEM-IM': 'https://sabiamedicina.com/products/sisten-im',
+    'ETERNOX OMEGA 7': 'https://sabiamedicina.com/products/eternox-omega-7-aceite-de-bayas-de-espino-amarillo',
+    'Saw Palmetto': 'https://sabiamedicina.com/products/saw-palmetto-vermont-supplements-90-capsulas'
     }
+},
 
     /**
      * Main function to process user messages
