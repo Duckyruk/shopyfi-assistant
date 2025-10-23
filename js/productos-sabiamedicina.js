@@ -274,3 +274,4 @@ window.obtenerProductosCategoria = function(categoria) {
 
 console.log('✅ Productos de sabiamedicina.com cargados correctamente');
 console.log('📦 Total de productos: ' + Object.values(PRODUCTOS_SABIAMEDICINA).reduce((total, cat) => total + cat.length, 0));
+/* Updated viernes, 24 de octubre de 2025, 01:06:16 CEST */
